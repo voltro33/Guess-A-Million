@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess the Number</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            background: linear-gradient(to right, #ff9a9e, #fad0c4); /* Gradient background */
+            color: #333;
+        }
+        h1 {
+            color: #fff; /* White text for the heading */
+        }
+        input {
+            font-size: 16px;
+            padding: 10px;
+            border: 2px solid #4CAF50;
+            border-radius: 5px;
+            outline: none;
+            margin: 10px;
+            transition: border-color 0.3s ease;
+        }
+        input:focus {
+            border-color: #45a049; /* Darker green on focus */
+        }
+        button {
+            font-size: 16px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            color: #fff;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            opacity: 0.9; /* Slightly transparent on hover */
+        }
+        .submit-button {
+            background-color: darkcyan;
+        }
+        .reset-button {
+            background-color: darkolivegreen;
+        }
+        p {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+        .result, .attempts {
+            font-size: 20px;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Guess the Number</h1>
+    <p id="rangeId">Guess a number between 1 and 100:</p>
+    <input type="number" id="guessInput" placeholder="Enter your guess" onkeydown="checkEnter(event)">
+    <input type="number" id="limitId" placeholder="Limit Range" onchange="changeTarget()">
+    
+    <button class="submit-button" onclick="submitGuess()">Submit Guess</button>
+    <button class="reset-button" onclick="resetGame()">Reset Game</button>
+
+    <p id="resultMessage"></p>
+    <p id="attempts"></p>
+
+    <script src="GuessScript.js"></script>
+</body>
+</html>
